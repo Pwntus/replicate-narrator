@@ -33,8 +33,8 @@ export default defineEventHandler(async (event) => {
       input: {
         image,
         prompt,
-        temperature: 0.7,
-        max_tokens: 1024
+        temperature: 0.75,
+        max_tokens: 400
       },
       webhook: `https://r3swiuknhh.execute-api.eu-west-1.amazonaws.com/prod/webhook?key=${ws_id}&narrator=${narrator}&type=text`,
       webhook_events_filter: ['completed']
