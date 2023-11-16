@@ -105,7 +105,6 @@ export default {
   methods: {
     // Tick is responsible for firing new observations if we're stuck/ready
     tick() {
-      return
       console.log('--- log: tick, state = ', this.state)
       if (this.state === 0) {
         this.countdown -= 1
