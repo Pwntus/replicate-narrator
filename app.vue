@@ -77,7 +77,8 @@ export default {
     narrators: [
       { text: 'David Attenborough', value: 'david' },
       { text: 'Morgan Freeman', value: 'morgan' },
-      { text: 'Louis Theroux', value: 'louis' }
+      { text: 'Louis Theroux', value: 'louis' },
+      { text: 'Philomena Cunk', value: 'philomena' }
     ]
   }),
   methods: {

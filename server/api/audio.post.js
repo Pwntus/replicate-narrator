@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
     if (narrator === 'david') voice = await import('./speakers/david')
     if (narrator === 'morgan') voice = await import('./speakers/morgan')
     if (narrator === 'louis') voice = await import('./speakers/louis')
+    if (narrator === 'philomena') voice = await import('./speakers/philomena')
     if (!voice) throw new Error('narrator not found')
     speaker = voice.default
 
