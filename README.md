@@ -11,7 +11,7 @@ Clone this repo, make a [Replicate](https://replicate.com) account and update th
 REPLICATE_API_TOKEN=<token>
 ```
 
-## Run it!
+## Run it
 
 ```bash
 npm install
