@@ -1,32 +1,55 @@
 <template lang="pug">
 #app.h-full
-  nav.fixed.inset-x-0.top-0.z-10(v-if="false")
-    .container.mx-auto.p-2.flex.items-center.text-gray-100.text-sm(
-      class="lg:p-4"
-    )
-      .grow
-      a.text-gray-800.inline-flex.px-2.py-2(
-        href="https://replicate.com/"
-        class="hover:text-blue-600"
-        target="_new"
-      ) Replicate
-  .text-3xl.font-medium.text-gray-800.text-center.mt-10.mb-6(
-    v-if="false"
-    class="lg:text-4xl lg:mt-20 lg:mb-12"
-  ) Webcam
-
   main.container.mx-auto.p-2(
     class="lg:p-4"
   )
-    webcam(@data="onData")
-    select(v-model="narrator")
-      option(
-        v-for="(item, index) in narrators"
-        :key="`narrator-${index}`"
-        :value="item.value"
-      ) {{ item.text }}
+    .rounded-lg.bg-slate-700.text-neutral-50.p-2(
+      class="lg:p-4"
+    )
+      span.font-bold Let famous people narrate your life! 
+      | This work is based on open source machine leraning models. Idea + demo was originally created by Charlie Holtz: 
+      a.text-neutral-300(
+        class="hover:text-neutral-50"
+        href="https://twitter.com/charliebholtz/status/1724815159590293764"
+        target="_new"
+      ) https://twitter.com/charliebholtz/status/1724815159590293764
 
-    .text-3xl.font-medium.text-gray-800.text-center {{ state_text[state] }}
+    .grid.grid-cols-4.gap-2.content-center.my-2(
+      class="lg:gap-4 lg:my-4"
+    )
+      a.rounded-lg.bg-amber-100.text-amber-950.text-center.font-medium.p-2(
+        class="lg:p-4 hover:bg-amber-200"
+        href="https://replicate.com/?utm_source=project&utm_campaign=narrator"
+        target="_new"
+      ) Replicate
+      a.rounded-lg.bg-amber-100.text-amber-950.text-center.font-medium.p-2(
+        class="lg:p-4 hover:bg-amber-200"
+        href="https://replicate.com/yorickvp/llava-13b"
+        target="_new"
+      ) LLaVA 13B
+      a.rounded-lg.bg-amber-100.text-amber-950.text-center.font-medium.p-2(
+        class="lg:p-4 hover:bg-amber-200"
+        href="https://replicate.com/lucataco/xtts-v2"
+        target="_new"
+      ) XTTS-v2
+      a.rounded-lg.bg-amber-100.text-amber-950.text-center.font-medium.p-2(
+        class="lg:p-4 hover:bg-amber-200"
+        href="https://github.com/Pwntus/replicate-narrator/tree/main"
+        target="_new"
+      ) GitHub
+
+    webcam(@data="onData")
+
+    .grid.grid-cols-2.gap-2.content-center.mt-2(
+      class="lg:gap-16 lg:mt-4"
+    )
+      select.rounded-lg.bg-slate-700.text-neutral-50(v-model="narrator")
+        option(
+          v-for="(item, index) in narrators"
+          :key="`narrator-${index}`"
+          :value="item.value"
+        ) {{ item.text }}
+      .text-3xl.font-medium.text-gray-800.self-center.justify-center.flex {{ state_text[state] }}
 </template>
 
 <script>
@@ -190,10 +213,6 @@ export default {
 
   select
     width 100%
-    margin 10px 0
     padding 15px
-    background #444
-    color #fff
     display block
-    border-radius 10px
 </style>

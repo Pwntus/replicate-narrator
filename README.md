@@ -4,7 +4,7 @@ Based on: https://github.com/cbh123/narrator
 
 ## Setup
 
-Clone this repo, make a [Replicate](https://replicate.com) and update the `.env` file:
+Clone this repo, make a [Replicate](https://replicate.com) account and update the `.env` file with your API token:
 
 ```
 REPLICATE_API_TOKEN=<token>
@@ -13,6 +13,6 @@ REPLICATE_API_TOKEN=<token>
 ## Run it!
 
 ```bash
-yarn install
-yarn start
+npm install
+npm run dev
 ```
