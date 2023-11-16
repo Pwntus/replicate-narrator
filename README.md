@@ -1,6 +1,7 @@
 # Replicate Narrator
 
 Based on: https://github.com/cbh123/narrator
+Try it live here: https://replicate-narrator.vercel.app
 
 ## Setup
 
