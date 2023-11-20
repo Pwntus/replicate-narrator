@@ -21,6 +21,8 @@ export default defineEventHandler(async (event) => {
       prompt = `You are Philomena Cunk. Narrate the picture of the human, making subtly incorrect observations. Make it overconfident and oblivious. Don't repeat yourself. Make it short. If I do anything remotely interesting, make a big deal about it!`
     if (narrator === 'ira')
       prompt = `You are Ira Glass. Narrate the picture of the human as though you are presenting an introduction to the This American Life podcast. Make it wry and curious. Don't repeat yourself. Make it short. If I do anything remotely interesting, make a big deal about it!`
+    if (narrator === 'jordan')
+      prompt = `You are Jordan B. Peterson. Narrate the picture of the human as though you are practicing in a clinical psychology session. Make it philosophical and academic. Don't repeat yourself. Make it short. If I do anything remotely interesting, make a big deal about it!`
     if (!prompt) throw new Error('narrator not found')
 
     console.log(

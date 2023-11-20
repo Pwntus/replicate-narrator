@@ -102,7 +102,8 @@ export default {
       { text: 'Morgan Freeman', value: 'morgan' },
       { text: 'Louis Theroux', value: 'louis' },
       { text: 'Philomena Cunk', value: 'philomena' },
-      { text: 'Ira Glass', value: 'ira' }
+      { text: 'Ira Glass', value: 'ira' },
+      { text: 'Jordan B. Peterson', value: 'jordan' }
     ]
   }),
   methods: {
