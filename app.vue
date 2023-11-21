@@ -163,6 +163,45 @@ export default {
             text
           )
 
+          // We can skip straight to audio synthesis here,
+          // but we run the generated text through llama 2 for better style.
+          /*
+          await fetch('/api/audio', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              narrator,
+              text: text,
+              ws_id
+            })
+          })
+          */
+
+          await fetch('/api/text-enhancer', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              narrator,
+              text: text,
+              ws_id
+            })
+          })
+        }
+
+        // We got a text response, send it further to synthesize an audio response
+        if (type === 'text-enhancer') {
+          this.state = 2
+
+          const text = event.data.body.output.join('')
+          console.log(
+            `--- log: got text-enhancer response with narrator = ${narrator}: `,
+            text
+          )
+
           await fetch('/api/audio', {
             method: 'POST',
             headers: {
